@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Brodsky - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#interactive">A Day in the Life</a></li>
+            <li><a href="#connect">Connect</a></li>
+        </ul>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-content">
+            <!-- Optional: <img src="path/to/your/photo.jpg" alt="Ryan Brodsky" class="profile-photo"> -->
+            <h1>Ryan Brodsky</h1>
+            <p class="tagline">Where Communication Meets Code: Building What People Need</p>
+            <p class="intro">
+                As an implementation manager and coder, I bridge the gap between technical execution and client needs.
+                My background in education and product management allows me to collaborate, innovate, and deliver solutions
+                that are both technically sound and strategically aligned.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <section id="skills">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-comments skill-icon"></i>
+                    <h3>Communication</h3>
+                    <p>Expertly liaising between technical teams and clients to ensure clear understanding and successful project outcomes.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-laptop-code skill-icon"></i>
+                    <h3>Technical Skills</h3>
+                    <p>Proficient in coding and technical problem-solving, contributing directly to implementations and understanding engineering complexities.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-brain skill-icon"></i>
+                    <h3>Strategic Thinking</h3>
+                    <p>Developing and executing strategies that align with business needs, leveraging insights from diverse experiences in education and tech.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Implementation Manager</h3>
+                    <p>Dual Enroll (Current)</p>
+                    <p>Leading client implementations, customizing solutions, and bridging communication between engineering and client stakeholders.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Product Manager & Instructor</h3>
+                    <p>General Assembly (Coding Bootcamp)</p>
+                    <p>Managed educational products and taught coding principles, fostering technical talent.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>College English Teacher</h3>
+                    <p>7 Years</p>
+                    <p>Developed curricula and taught English at the college level, honing communication and instructional design skills.</p>
+                </div>
+                <hr class="timeline-divider">
+                <div class="timeline-item education">
+                    <h3>MBA</h3>
+                    <p>University of Colorado Boulder</p>
+                </div>
+                <div class="timeline-item education">
+                    <h3>MA English</h3>
+                    <p>University of Alaska Fairbanks</p>
+                </div>
+                <div class="timeline-item education">
+                    <h3>BA English</h3>
+                    <p>University of Illinois Urbana Champaign</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Project Gallery</h2>
+            <div class="project-gallery">
+                <!-- Example Project Item (repeat 3-5 times) -->
+                <div class="project-item project-item-webapp">
+                    <div class="webapp-image-container">
+                        <img src="images/geddit-screenshot.png" alt="GedditTogether Web App Screenshot">
+                    </div>
+                    <h3><a href="http://www.geddittogether.com" target="_blank">GedditTogether</a></h3>
+                    <p>Achieve your goals with the help of your AI Coaches and human collaborators.</p>
+                    <p>FastAPI, React, PostgreSQL, Stripe, OpenAI, Autogen</p>
+                </div>
+                <div class="project-item project-item-iphone">
+                    <div class="iphone-frame">
+                        <div class="iphone-speaker"></div>
+                        <div class="iphone-screen">
+                            <img src="images/gradical.jpeg" alt="Gradical App Screenshot">
+                        </div>
+                        <div class="iphone-button"></div>
+                    </div>
+                    <h3>Gradical</h3>
+                    <p>Find the fastest, most cost-effective path to your college degree.</p>
+                    <p>Expo, React Native, Postgresql</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="interactive">
+            <h2>A Day in the Life</h2>
+            <div class="interactive-grid">
+                <div class="interactive-item" id="word-scramble-game">
+                    <h3>Word Scramble</h3>
+                    <p>Unscramble a word related to education or technology!</p>
+                    <!-- Game will be implemented here -->
+                    <div id="scramble-container">
+                        <p id="scrambled-word"></p>
+                        <input type="text" id="scramble-guess" placeholder="Your guess">
+                        <button id="scramble-submit">Submit</button>
+                        <p id="scramble-feedback"></p>
+                        <p id="scramble-fun-fact" style="display:none;"></p>
+                    </div>
+                </div>
+                <div class="interactive-item" id="build-project-game">
+                    <h3>Build the Perfect Project</h3>
+                    <p>Drag and drop the elements to build a successful project.</p>
+                    <!-- Game will be implemented here -->
+                    <div id="project-builder-container">
+                        <div id="project-elements-pool">
+                            <div class="draggable-element" draggable="true" id="el-req">Clear Requirements</div>
+                            <div class="draggable-element" draggable="true" id="el-collab">Collaboration</div>
+                            <div class="draggable-element" draggable="true" id="el-tech">Technical Know-How</div>
+                            <div class="draggable-element" draggable="true" id="el-strat">Strategic Vision</div>
+                        </div>
+                        <div id="project-dropzone">Drop elements here</div>
+                        <p id="project-builder-feedback"></p>
+                    </div>
+                </div>
+                <div class="interactive-item" id="weightlifting-challenge">
+                    <h3>Weightlifting Challenge</h3>
+                    <p>Can you match Ryan’s deadlift? Click rapidly!</p>
+                    <!-- Game will be implemented here -->
+                    <div id="lift-container">
+                    <div id="lift-barbell-area">
+                        <!-- <img src="images/barbell.png" alt="Barbell" id="barbell-img"> -->
+                        <i class="fas fa-dumbbell" id="barbell-icon" style="font-size: 50px; margin-bottom: 10px; display: block;"></i>
+                        <div id="lift-meter-bg">
+                            <div id="lift-meter-fill"></div>
+                        </div>
+                    </div>
+                    <button id="lift-button">Lift!</button>
+                        <p id="lift-feedback">Current Lift: 0 lbs</p>
+                        <p id="lift-boast" style="display:none;">Wow! You matched Ryan's 425 lbs deadlift! Beast mode!</p>
+                    </div>
+                </div>
+                <div class="interactive-item" id="logan-museum-explorer">
+                    <h3>Logan's Museum Adventures</h3>
+                    <p>Help Logan explore, learn, and stay happy!</p>
+                    <!-- Game will be implemented here -->
+                    <div id="logan-tamagotchi">
+                        <div id="logan-status">
+                            <p>Logan's Mood: <span id="logan-mood">Happy</span></p>
+                            <p>Hunger: <span id="logan-hunger">Not Hungry</span></p>
+                            <p>Learning: <span id="logan-learning">Curious</span></p>
+                        </div>
+                        <div id="logan-actions">
+                            <button data-action="feed">Feed Logan</button>
+                            <button data-action="play-science">Visit Science Museum</button>
+                            <button data-action="play-art">Visit Art Museum</button>
+                            <button data-action="learn">Teach Something New</button>
+                        </div>
+                        <div id="logan-feedback-area">
+                            <p id="logan-activity-feedback"></p>
+                        </div>
+                         <!-- <img src="images/logan_happy.png" alt="Logan" id="logan-sprite" style="width:100px; height:auto;"> -->
+                         <i class="fas fa-child" id="logan-sprite-icon" style="font-size: 80px; margin-top: 1rem; display: block;"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="connect">
+            <h2>Connect With Me</h2>
+            <p>Let's connect on LinkedIn!</p>
+            <a href="https://www.linkedin.com/in/ryanthebrodsky" target="_blank" class="linkedin-button">
+                <i class="fab fa-linkedin"></i> Ryan Brodsky on LinkedIn
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Ryan Brodsky. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

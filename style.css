@@ -1,0 +1,704 @@
+/* General Body Styles */
+body {
+    font-family: 'Georgia', serif; /* Serif for baroque feel, fallback to Georgia */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background for contrast */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #228B22; /* Forest Green */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', sans-serif; /* Sans-serif for nav readability */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Warm Gold for hover */
+}
+
+/* Header (Hero Section) Styles */
+header#hero {
+    background: #228B22; /* Forest Green */
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 5px solid #FFD700; /* Warm Gold accent */
+}
+
+header#hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header#hero h1 {
+    font-family: 'Playfair Display', serif; /* Elegant Serif for main heading */
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+header#hero .tagline {
+    font-family: 'Lato', sans-serif; /* Readable Sans-serif for tagline */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #FFFACD; /* Cream */
+}
+
+header#hero .intro {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #f0f0f0;
+}
+
+/* Main Content Styles */
+main {
+    padding: 0; /* Sections will have their own padding */
+}
+
+section {
+    padding: 3rem 2rem;
+    margin-bottom: 10px; /* Small gap between sections */
+    border-bottom: 1px solid #ddd; /* Subtle separator */
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+section h2 {
+    font-family: 'Playfair Display', serif; /* Elegant Serif for section headings */
+    font-size: 2.5rem;
+    color: #800000; /* Deep Burgundy */
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Baroque-inspired flourish for headings */
+section h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #FFD700; /* Warm Gold */
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+
+/* Skills Grid Styles */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    border-left: 5px solid #228B22; /* Forest Green accent */
+}
+
+.skill-icon {
+    /* width: 60px; */ /* Not needed for font icons */
+    /* height: 60px; */ /* Not needed for font icons */
+    font-size: 60px; /* Increased size for better visibility */
+    color: #228B22; /* Forest Green, or inherit from skill-item h3 */
+    margin-bottom: 1rem;
+    display: inline-block; /* Allows margin and proper spacing */
+    line-height: 1; /* Ensure consistent line height for icons */
+}
+
+.skill-item h3 {
+    font-family: 'Merriweather', serif; /* Another elegant serif */
+    font-size: 1.5rem;
+    color: #228B22; /* Forest Green */
+    margin-bottom: 0.5rem;
+}
+
+.skill-item p {
+    font-family: 'Open Sans', sans-serif; /* Readable sans-serif for body text */
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Experience Timeline Styles */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline::before { /* Central line for the timeline */
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: #800000; /* Deep Burgundy */
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    position: relative;
+    width: calc(50% - 4rem); /* Adjust width for spacing */
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    border-left: 5px solid #FFD700; /* Warm Gold */
+}
+
+.timeline-item:nth-child(even) {
+    left: calc(50% + 2rem); /* Position to the right of the central line */
+    border-right: 5px solid #FFD700; /* Warm Gold */
+}
+
+/* Timeline item "dots" */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border: 3px solid #800000; /* Deep Burgundy */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd)::after {
+    right: -38px; /* (2rem padding / 2) + (width of dot / 2) + (width of line / 2) approx */
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -38px;
+}
+
+
+.timeline-item h3 {
+    font-family: 'Merriweather', serif;
+    color: #228B22; /* Forest Green */
+    margin-top: 0;
+}
+
+.timeline-item p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item.education h3 {
+    color: #800000; /* Deep Burgundy for education titles */
+}
+
+.timeline-divider {
+    border: 0;
+    height: 2px;
+    background-color: #FFD700; /* Warm Gold */
+    margin: 3rem auto;
+    width: 60%;
+}
+
+
+/* Project Gallery Styles */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensures image fits within rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    display: flex; /* Use flexbox to manage layout */
+    flex-direction: column; /* Stack image container and text vertically */
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Default image styling for project items that are not iPhone or webapp special cases */
+.project-item img { /* This will apply if no more specific rule is set */
+    width: 100%;
+    height: 200px; /* Default height for generic project images */
+    object-fit: cover;
+    display: block;
+}
+
+.project-item h3 {
+    font-family: 'Merriweather', serif;
+    color: #228B22; /* Forest Green */
+    padding: 1rem 1rem 0.5rem;
+    margin: 0;
+}
+
+.project-item p {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0 1rem 1rem;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.project-item p strong {
+    color: #333;
+}
+
+/* iPhone frame styles for specific project items */
+.project-item-iphone {
+    /* Adjust padding or other properties if needed to accommodate the frame */
+    padding-bottom: 1rem; /* Ensure space for text below the frame */
+}
+
+.iphone-frame {
+    width: 180px; /* Adjust width to maintain aspect ratio, e.g., iPhone X is ~2.165:1 height/width */
+    height: 370px; /* Approx height for a phone-like aspect ratio */
+    background-color: #111; /* Phone body color */
+    border-radius: 30px; /* Rounded corners of the phone */
+    margin: 0 auto 1rem; /* Center the frame and add margin below */
+    padding: 15px; /* Padding around the screen */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    box-sizing: border-box;
+    display: flex; /* Eases centering of screen */
+    align-items: center;
+    justify-content: center;
+}
+
+.iphone-speaker {
+    width: 40px;
+    height: 5px;
+    background-color: #333;
+    border-radius: 3px;
+    position: absolute;
+    top: 20px; /* Position speaker at the top */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.iphone-screen {
+    width: 100%; 
+    height: calc(100% - 30px); /* Screen height, accounting for top/bottom bezel areas if any */
+    background-color: #000; /* Screen background before image loads */
+    overflow: hidden; /* Clip the image to the screen boundaries */
+    border-radius: 3px; /* Slight rounding for inner screen, if desired */
+    position: relative; /* For image positioning */
+}
+
+.iphone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover to fill, might crop if aspect ratio is very different */
+    /* object-fit: contain; */ /* Use contain if showing the whole image without cropping is preferred */
+    display: block;
+}
+
+.iphone-button { /* Optional home button */
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #444;
+}
+
+/* Styling for the web app image container */
+.project-item-webapp .webapp-image-container {
+    height: 370px; /* Match iPhone frame height */
+    width: 100%;   /* Take full width of the card */
+    background-color: #f0f0f0; /* Light background for letterboxing if image is smaller */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure image doesn't spill */
+    margin-bottom: 1rem; /* Space before the text content */
+}
+
+.project-item-webapp .webapp-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Show entire image, letterbox if needed */
+}
+
+/* Remove the :not selector as specific styles will override the default .project-item img */
+/*
+.project-item:not(.project-item-iphone) img { ... }
+*/
+
+/* Ensure the specific iPhone image styling takes precedence and image fills screen */
+.project-item-iphone .iphone-screen img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; /* Cover is better for phone screen to avoid letterboxing inside phone */
+}
+
+
+/* Interactive Elements Section */
+#interactive {
+    background-color: #FFFACD; /* Cream background for this section */
+}
+
+.interactive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.interactive-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 5px solid #800000; /* Deep Burgundy accent */
+}
+
+.interactive-item h3 {
+    font-family: 'Merriweather', serif;
+    color: #800000; /* Deep Burgundy */
+    margin-top: 0;
+}
+
+.interactive-item p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+}
+
+/* Styling for game elements - basic placeholders */
+input[type="text"], button {
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Open Sans', sans-serif;
+}
+
+button {
+    background-color: #228B22; /* Forest Green */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+button:hover {
+    background-color: #1A691A; /* Darker Forest Green */
+}
+
+/* Word Scramble Game Specific */
+#scrambled-word {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #800000; /* Deep Burgundy */
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 2px;
+}
+#scramble-feedback, #scramble-fun-fact {
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Project Builder Game Specific */
+#project-elements-pool {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.draggable-element {
+    padding: 10px 15px;
+    background-color: #FFD700; /* Warm Gold */
+    color: #333;
+    border-radius: 5px;
+    cursor: grab;
+    border: 1px solid #DAA520; /* Darker Gold */
+}
+#project-dropzone {
+    border: 2px dashed #800000; /* Deep Burgundy */
+    padding: 2rem;
+    text-align: center;
+    min-height: 100px;
+    background-color: #fffaf0; /* Floral White - subtle */
+    border-radius: 5px;
+}
+#project-builder-feedback {
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Weightlifting Challenge Specific */
+#lift-container {
+    text-align: center;
+}
+#lift-barbell-area {
+    margin-bottom: 1rem;
+    position: relative; /* For meter positioning */
+    display: inline-block; /* To center the image and meter */
+}
+#barbell-icon { /* Styles for the dumbbell icon */
+    font-size: 50px; /* Already set inline, but can be centralized here */
+    margin-bottom: 10px; /* Already set inline */
+    display: block; /* Already set inline */
+    color: #333; /* Example color */
+    text-align: center; /* Ensure it's centered if parent is not already */
+}
+
+/* #barbell-img - removing as it's replaced by an icon */
+/*
+#barbell-img {
+    width: 150px; 
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+*/
+#lift-meter-bg {
+    width: 200px;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 0 auto; /* Center the meter */
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+#lift-meter-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #228B22; /* Forest Green */
+    border-radius: 10px 0 0 10px; /* Keep left radius */
+    transition: width 0.1s linear;
+}
+#lift-feedback, #lift-boast {
+    margin-top: 1rem;
+    font-style: italic;
+}
+#lift-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+}
+
+/* Logan's Museum Adventures Specific */
+#logan-tamagotchi {
+    text-align: center;
+}
+#logan-status p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+}
+#logan-status span {
+    font-weight: bold;
+    color: #228B22; /* Forest Green */
+}
+#logan-actions button {
+    margin: 0.5rem;
+    background-color: #800000; /* Deep Burgundy */
+}
+#logan-actions button:hover {
+    background-color: #600000; /* Darker Burgundy */
+}
+#logan-activity-feedback {
+    margin-top: 1rem;
+    font-style: italic;
+    min-height: 20px; /* Reserve space */
+}
+#logan-sprite-icon { /* Styles for the Logan icon */
+    /* font-size: 80px; */ /* Set inline, can be moved here */
+    /* margin-top: 1rem; */ /* Set inline */
+    /* display: block; */   /* Set inline */
+    color: #800000; /* Deep Burgundy, or another suitable color */
+    transition: transform 0.3s ease; /* For the bounce effect */
+    text-align: center; /* Ensure it's centered */
+}
+
+.logan-icon-base-style { /* Base class added in JS for consistent styling */
+    font-size: 80px;
+    margin-top: 1rem;
+    display: block !important; /* Ensure display block overrides Font Awesome's default if any */
+    text-align: center;
+}
+
+
+/* Connect Section Styles */
+#connect {
+    background-color: #2F4F2F; /* Darker Green, for a rich feel */
+    color: #fff;
+    text-align: center;
+}
+
+#connect h2 {
+    color: #FFD700; /* Warm Gold for heading on dark background */
+}
+#connect h2::after {
+    background-color: #FFFACD; /* Cream for flourish on dark */
+}
+
+#connect p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.linkedin-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #FFD700; /* Warm Gold */
+    color: #333;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 2px solid #DAA520; /* Darker Gold border */
+}
+
+.linkedin-button i { /* Style for Font Awesome icon in button */
+    font-size: 24px; /* Match previous image size */
+    margin-right: 0.75rem;
+    vertical-align: middle; /* Helps align icon with text */
+}
+
+.linkedin-button:hover {
+    background-color: #F0C000; /* Slightly darker gold */
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    header#hero h1 {
+        font-size: 2.5rem;
+    }
+    header#hero .tagline {
+        font-size: 1.2rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    /* Timeline adjustments for smaller screens */
+    .timeline::before {
+        left: 30px; /* Move line to the left */
+    }
+    .timeline-item {
+        width: calc(100% - 50px); /* Full width minus some padding */
+        left: 0 !important; /* Align all items to the left of the line */
+        margin-left: 50px; /* Space for the line and dot */
+        border-left: 5px solid #FFD700;
+        border-right: none; /* Remove right border */
+    }
+    .timeline-item:nth-child(even) {
+        left: 0 !important;
+        margin-left: 50px;
+    }
+    .timeline-item::after {
+        left: -15px !important; /* Position dot on the line */
+        right: auto !important;
+    }
+
+    .skills-grid, .project-gallery, .interactive-grid {
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+/* Baroque Ornamentation - Placeholder for more complex flourishes if desired */
+/* Example: A decorative border for sections */
+/*
+section {
+    border: 1px solid #800000;
+    padding: 2rem;
+    position: relative;
+}
+section::before, section::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: #FFD700;
+    border-style: solid;
+}
+section::before {
+    top: -5px;
+    left: -5px;
+    border-width: 2px 0 0 2px;
+}
+section::after {
+    bottom: -5px;
+    right: -5px;
+    border-width: 0 2px 2px 0;
+}
+*/
+
+/* Accessibility */
+*:focus {
+    outline: 3px solid #FFD700; /* Warm Gold focus outline */
+    outline-offset: 2px;
+}
